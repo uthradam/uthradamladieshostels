@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uthradam Ladies Hostel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="website-wrapper">
+
+        <!-- Website Header (Navbar)-->
+        <header class="navigation">
+            <div class="nav-brand">
+                <img class="nav-brand__logo" src="./assets/images/logo.png" alt="Uthradam Hostels Logo"/>
+                <p class="nav-brand__name">Uthradam Ladies Hostel</p>
+            </div>
+            
+            <nav class="navbar">
+                <ul>
+                    <li>
+                        <a href="" data-info="#about" onclick="navigate(event);">Home</a>
+                    </li>
+                    <li>
+                        <a href="" data-info="#about" onclick="navigate(event)">About</a>
+                    </li>
+                    <li>
+                        <a href="" data-info="#services" onclick="navigate(event)">Services</a>
+                    </li>
+                    <li>
+                        <a href="" data-info="#contact" onclick="navigate(event)">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Website Main Content-->
+        <main id="content-wrapper">
+            <section class="about-wrapper" id="about">
+                <div class="about-box">
+                    <h1>About us</h1> 
+                    <p>
+                        Welcome to Uthradam Ladies Hostels! Our 
+                        ladies-only hostel provides secure, comfortable, 
+                        and affordable accommodations in a nurturing environment. 
+                        We offer amenities tailored to your needs, including  
+                        well-maintained rooms, 3 times food, purified water and 24/7 surveillance. Choose our hostel for a peaceful 
+                        and empowering stay!
+                    </p>
+                </div>
+            </section>
+
+            <section class="service-wrapper" id="services">
+                <h1>Our services</h1> 
+                <div class="services">
+                    <div class="service">
+                        <div>
+                            <img src="./assets/images/food.png" />
+                        </div>
+                        <div>
+                            <p>Quality and healthy breakfast, lunch and dinner</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div>
+                            <img src="./assets/images/water.png" />
+                        </div>
+                        <div>
+                            <p>RO purified drinking water</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div>
+                            <img src="./assets/images/furniture.png" />
+                        </div>
+                        <div>
+                            <p>Good furnishing for daily needs</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div>
+                            <img src="./assets/images/cctv.png" />
+                        </div>
+                        <div>
+                            <p>Secure & 24/7 monitoring with CCTV</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div>
+                            <img src="./assets/images/bed.png" />
+                        </div>
+                        <div>
+                            <p>Comfortable beddings & mattress</p>
+                        </div>
+                    </div>
+                    <div class="service">
+                        <div>
+                            <img src="./assets/images/clean.png" />
+                        </div>
+                        <div>
+                            <p>Properly cleaned rooms</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="slider-wrapper" id="photos">
+                <div class="slider">
+                    <div class="slide" id="slide1"><img src="./assets/images/slider/img1.webp" alt="hostel_image"></div>
+                    <div class="slide" id="slide2"><img src="./assets/images/slider/img2.webp" alt="hostel_image"></div>
+                    <div class="slide" id="slide3"><img src="./assets/images/slider/img3.webp" alt="hostel_image"></div>
+                    <div class="slide" id="slide4"><img src="./assets/images/slider/img4.webp" alt="hostel_image"></div>
+                    <div class="slide" id="slide5"><img src="./assets/images/slider/img5.webp" alt="hostel_image"></div>
+                    <div class="slide" id="slide6"><img src="./assets/images/slider/img6.webp" alt="hostel_image"></div>
+                    <!-- Add more slides as needed -->
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+                  
+            </section>
+           
+        </main>
+        <!-- Website Footer (Contact info)-->
+        <footer id="contact">
+            <h3>Contact us</h3>
+            <div class="contact-wrapper">
+                
+                
+                <div>
+                    <p> Uthradam hostel, <br/>
+                        SS kovil road,<br/>
+                        Near by 7 hills hotel,<br/>
+                        Thampanoor,<br/>
+                   Trivandrum</p>
+                   
+                </div>
+                <div>
+                    <p>Phone: 8848699909</p>
+                   <p>Email: <a href="mailto:k8610131415@gmail.com">k8610131415@gmail.com</a></p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+<script src="script.js"></script>
+</html>

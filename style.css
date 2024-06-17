@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    /* COLOR SCHEME */
+    --primary:#E2BBE9;
+    --secondary:#f8f8ff;
+    --accent:#6052dd;
+    --text:#fff;
+    --opacity: .5;
+    --border-radius: .3em;
+    --blur: 3px;
+
+    
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "width" 100;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url('./assets/images/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+section {
+    background-color: rgba(0,0,0,.3);
+    min-height: 100vh;
+}
+/* Header Styles */
+.navigation {
+    
+    
+    width: 100%;
+    height:70px;
+    padding: 1.5em;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    
+    position: fixed;
+    top:0;
+    left: 0;
+
+    
+    transition: all .3s ease;
+    z-index: 1000;
+    transition: all .6s ease;
+}
+.navigation.bg {
+    backdrop-filter: blur(var(--blur));
+    background-color: rgba(0,0,0,var(--opacity));
+}
+.nav-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .3em;
+    cursor: pointer; 
+}
+.nav-brand__logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    
+}
+.nav-brand__name {
+    font-size: 1.3rem;
+    user-select: none;
+    color: var(--text);
+    font-weight: 500;
+    font-style: italic;
+
+
+} 
+.navbar {
+    padding: .5em;
+
+}
+.navbar ul {
+    list-style: none;
+}
+.navbar ul li {
+    display: inline;
+    margin:0 1.4em;
+    font-size: 1rem;
+    list-style-type:none;
+    position: relative;
+}
+.navbar ul li a {
+    text-decoration: none;
+    color: var(--text);
+    cursor: pointer;
+    user-select: none;
+
+}
+
+@media screen and (min-width:470px) {
+    .nav-brand__name {
+        
+        transform: scale(0);
+        animation: brand-scale-up .4s ease-in-out forwards;
+    }
+    .navbar ul li a::before {
+        content: '';
+        width: 0px;
+        border-radius: .3em;
+        height: 3px;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: var(--accent);
+        transition: all .4s ease;
+        transform-origin: center;
+        
+    }
+    .navbar ul li a:hover {
+        
+        transition: all .4s ease;
+        
+    }
+    .navbar ul li a:hover::before{   
+        animation: expand .4s ease forwards;
+            
+    }
+    @keyframes expand {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 20px;
+        }
+    }
+    @keyframes brand-scale-up {
+        100% {
+            transform: scale(1);
+        }
+    }
+}
+/* END */
+
+/* START */
+/* STYLE FOR ABOUT US */
+.about-wrapper {
+
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+   
+}
+.about-wrapper .about-box {
+    --border-thickness: 5px;
+    width: 60%;
+    text-align: center;
+    background-color: rgb(16, 44, 87,calc(var(--opacity) - .3));
+    
+    
+    backdrop-filter: blur(calc(var(--blur) - 1));
+    padding: .5em .8em;
+
+    border-bottom: var(--border-thickness) solid var(--accent);
+    border-top: var(--border-thickness) solid var(--accent);
+    transform: scale(0);
+    animation: reveal 1s ease forwards;
+
+}
+@keyframes reveal {
+    100% {
+        transform: scale(1);
+    }
+    
+}
+.about-box h1 {
+    color: var(--text);
+    font-size: 2.7rem;
+    font-weight: 700;
+    
+    
+} 
+.about-box p {
+    color: var(--text);
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-top: .5em;
+    
+
+}
+/* END */
+
+/* START */
+/* STYLE FOR SERVICES */
+.service-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+
+}
+.service-wrapper h1 {
+    color: var(--text);
+    font-size: 2.7rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: .5em;
+}
+.services {
+    margin: auto;
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1em;
+    place-content: center;
+}
+.service {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: .5em;
+    border-radius: var(--border-radius);
+    background-color: rgb(16, 44, 87,var(--opacity));
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.service:hover {
+    backdrop-filter: blur(2px);
+}
+.service img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+}
+
+.service p {
+    color: var(--text);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: .3em;
+
+}
+
+/* END */
+/* START */
+/* CODE FOR SLIDER */
+
+.slider-wrapper {
+    min-height: 100vh;
+    display: grid;
+    place-content: center;
+    width: 100%;
+}
+.slider {
+    position: relative;
+
+  }
+  .slide {
+    display: none;
+
+  }
+
+  .slide img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border: 8px solid white;
+    border-radius: .3em;
+  }
+  .active {
+    display: block;
+  }
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    border: none;
+    outline: none;
+    background-color: var(--primary);
+    color: rgb(71, 71, 72);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    font-size: 1rem;
+
+  }
+  .prev {
+    left: -50px;
+  }
+  .next {
+    right: -50px;
+  }
+  /* END */
+
+  /* START */
+  /* CODE FOR FOOTER */
+  footer {
+    background-color: #232B2B;
+    padding: 1.5em;
+    width: 100%;
+    
+    
+  }
+  footer h3 {
+    text-align: center;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: .5em;
+  }
+  .contact-wrapper {
+    
+    width: fit-content;
+    color: var(--text);
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    margin: auto;
+
+    
+  }
+  .contact-wrapper p {
+    font-weight: 300;
+    font-size: .8rem;
+  }
+  .contact-wrapper p a {
+    text-decoration: none;
+    color: var(--accent);
+  }
+  .contact-wrapper p a:hover {
+    text-decoration: underline;
+  }
+  /* END */
