@@ -1,4 +1,10 @@
 let slideIndex = 1;
+
+const ham = document.querySelector(".ham");
+ham.addEventListener("click", toggleHam);
+const navbar = document.querySelector(".navbar");
+navbar.addEventListener("click", toggleMenu);
+
 function navigate(e) {
   e.preventDefault();
   let id = e.target.dataset.info;
@@ -17,7 +23,14 @@ function showSlides() {
   slides[slideIndex - 1].style.display = "block";
   setTimeout(showSlides, 4000);
 }
-
+function toggleMenu(e) {
+  navbar.classList.remove("expand");
+  ham.classList.remove("expand");
+}
+function toggleHam(e) {
+  ham.classList.toggle("expand");
+  navbar.classList.toggle("expand");
+}
 function changeSlide(n) {
   let slides = document.getElementsByClassName("slide");
   slideIndex += n;
